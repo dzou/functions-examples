@@ -20,6 +20,7 @@ public class CloudFunctionRequestHandler
 
   @Override
   public void service(HttpRequest request, HttpResponse response) throws IOException {
+    Thread.currentThread().setContextClassLoader(CloudFunctionMain.class.getClassLoader());
     this.initialize("");
     Publisher<?> output = this.apply(Mono.just("Hello World"));
     String result = this.result("Hello World", output);
