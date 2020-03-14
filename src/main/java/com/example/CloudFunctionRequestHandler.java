@@ -15,8 +15,7 @@ public class CloudFunctionRequestHandler
     extends AbstractSpringFunctionAdapterInitializer<String> implements HttpFunction {
 
   public CloudFunctionRequestHandler() {
-    // This was hardcoded...
-    super(CloudFunctionMain.class);
+    super();
   }
 
   @Override
